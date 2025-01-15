@@ -1,0 +1,22 @@
+# This cheatsheet covers essential PostgreSQL commands, categorized by SQL type. Use it as a reference as you learn and grow.
+
+# DATA DEFINITION LANGUAGE
+
+CREATE DATABASE db_test;
+
+DROP DATABASE db_test;
+
+DROP TABLE employees;
+
+CREATE TABLE  users (
+    user_id SERIAL PRIMARY KEY,
+    first_name VARCHAR(150),
+    last_name VARCHAR(150) NOT NULL,
+    email VARCHAR(150),
+    date_of_birth DATE
+    application_id INT REFERENCES application (application_id) ---> foreign key
+);
+
+ALTER TABLE users
+
+ADD COLUMN hire_date NOT NULL DEFAULT CURRENT_DATE;
