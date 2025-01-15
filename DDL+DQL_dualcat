@@ -1,0 +1,18 @@
+# DDL * DQL
+
+RETURNING
+AND | OR
+IF (NOT) EXISTS
+WHERE
+---> Order of execution: FROM | WHERE | SELECT | ORDER BY
+
+
+SELECT * FROM actors WHERE first_name LIKE '%a' ORDER BY first_name;
+SELECT * FROM actors WHERE first_name LIKE '_____' ORDER BY first_name;
+SELECT * FROM actors WHERE first_name LIKE 'tim%'; 
+---> LIKE is case sensitive! so use iLIKE
+
+
+SELECT * FROM actors WHERE first_name ILIKE 'tim%';
+SELECT * FROM actors WHERE date_of_birth IS NULL;
+SELECT * FROM movies_revenues WHERE revenues_domestic IS NOT NULL;
