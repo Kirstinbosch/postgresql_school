@@ -1,0 +1,58 @@
+# DATA MANIPULATION LANGUAGE
+
+DELETE FROM employees
+WHERE department = ‘Sales’
+RETURNING *;
+
+
+INSERT INTO employees (employee_id, first_name, last_name, hire_date)
+VALUES
+    (2, ‘Jane’, ‘Smith’, ‘2025-02-01’),
+    (3, ‘Bob’, ‘Hope’, ‘2025-03-02’);
+
+
+INSERT INTO employees (first_name last_name)
+VALUES
+('Bill', ‘O'’Sullivan); ---> inserting data with quotes
+
+
+UPDATE employees
+SET first_name = ‘Jane’, last_name = ‘Doe’
+WHERE employee_id = 2;  ---> with no WHERE clause, entire table will update
+
+
+UPSERT (update + insert):
+INSERT INTO table_name (column_list)
+VALUES (value_list)
+
+ON CONFLICT target action;
+example:
+
+CREATE TABLE t_tags (
+    id SERIAL PRIMARY KEY,
+    tag text UNIQUE,
+    update_date TIMESTAMP DEFAULT NOW()
+);
+
+
+INSERT INTO t_tags (tag)
+VALUES
+('Pen’),
+('Pencil);
+
+
+INSERT INTO t_tags (tag)
+VALUES
+('Pen')
+ON CONFLICT (tag) 
+DO NOTHING;
+
+
+
+INSERT INTO t_tags (tag)
+VALUES
+('Pen')
+ON CONFLICT (tag) 
+DO UPDATE SET
+    tag = EXCLUDED.tag || '1',
+    update_date = NOW();
