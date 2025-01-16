@@ -1,0 +1,7 @@
+# DATA TYPES
+
+BOOLEAN
+TRUE, FALSE, NULL
+valid literals:
+TRUE, 'true', 't', 'y', 'yes', '1'
+
