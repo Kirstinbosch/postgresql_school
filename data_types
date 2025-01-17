@@ -6,3 +6,12 @@ valid literals:
 TRUE, 'true', 't', 'y', 'yes', '1'
 ---> is_available
 
+CHARACTER TYPES - text, number, symbol; n - no. of characters
+3 main types
+1) CHARACTER(n), CHAR(n)
+fixed length
+2) CHARACTER VARYING(n), VARCHAR(n)
+variable length with limit
+3) TEXT, VARCHAR
+variable with unlimited length
+---> if excessive characters are all spaces, postgresql truncates the spaces to maximum legnth (n) and stores characters
