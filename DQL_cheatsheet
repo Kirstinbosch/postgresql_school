@@ -93,5 +93,11 @@ SELECT revenues_domestic, revenues_international, CONCAT(revenues_domestic, reve
 
 SELECT NOW();
 ---> timestampe + timezone
+SELECT CURRENT_DATE;
+SELECT CURRENT_TIME;
+SELECT LOCALTIME;
+
+SELECT CURRENT_TIME + INTERVAL '2 hours' AS result;
+---> adding time on
 
 
