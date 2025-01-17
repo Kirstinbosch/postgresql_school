@@ -90,3 +90,8 @@ SELECT
 SELECT 'hello' || ' ' || 'world' AS new_string;
 SELECT CONCAT_WS(', ', first_name, last_name, date_of_birth) FROM actors;
 SELECT revenues_domestic, revenues_international, CONCAT(revenues_domestic, revenues_international) FROM movies_revenues;
+
+SELECT NOW();
+---> timestampe + timezone
+
+
