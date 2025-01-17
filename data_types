@@ -20,3 +20,72 @@ n = max number of characters
 variable with unlimited length
 (per postgresql approx 1 gb)
 ---> if excessive characters are all spaces, postgresql truncates the spaces to maximum legnth (n) and stores characters
+
+NUMERIC
+Can hold various types but not null
+math operations can be performed
+MAIN TYPES
+1) Integers
+-/+ whole numbers
+2) Floating point
+fractions of whole numbers
+
+INTEGERS 
+1)smallint
+2 bytes
+2) integer
+4 bytes
+3)bigint
+8 bytes ----> value vs. cost for space
+
+SERIAL (auto-increment)
+1) smallserial 
+2 bytes
+2) serial
+4 bytes
+3) bigserial
+8 bytes
+
+DECIMALS
+represent whole number + fraction
+fraction represented by digits
+
+NUMERIC(precision, scale)
+precision: max number of digits to the left and the right of point
+scale: number of allowable digits on the right of the point
+NUMERIC(10,2) will return two digita to the right of the point
+storage - variable, fixed point
+
+Floating point types
+1) REAL
+allows precision to six decimal digits
+4 bytes, floating
+2) DOUBLE 
+allows precision to 15 decimal point of precision
+unlike numeric, where we specify fixed precision, the decimal point can "float" depending on number
+8 bytes, floating
+
+SELECING NUMBER TYPES
+- Use integers where possible
+- decimal data and calculations need to be exact -> numeric/ decimal. flaot will save space, but be careful of inexactness
+- choose big enough number type by looking at your data
+- with big whole numbers, use bigint only if column values constrained to fit into either smaller integer or smallint
+
+DATE / TIME TYPES
+1) DATE, CURRENT_DATE
+date only
+4 bytes
+YYY-MM-DD
+2) TIME
+time only
+3) TIMESTAMP
+date and time
+4) TIMESTAMPTZ
+date, time, timezone
+5) INTERVAL
+stores values - difference between dates
+
+
+
+
+
