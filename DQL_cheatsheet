@@ -82,6 +82,10 @@ SELECT * FROM movies WHERE release_date BETWEEN '1998-01-01' AND '2002-12-31' OR
 SELECT * FROM movies WHERE movie_length >= 100 AND movie_length <= 200 ORDER BY movie_length;
 SELECT * FROM movies WHERE movie_length NOT BETWEEN 100 AND 150 ORDER BY movie_length;
 
+SELECT
+	CAST('Kirst' AS CHARACTER(10)) AS "Name",
+	'Kirst'::CHAR(10) AS "Name";
+
 
 SELECT 'hello' || ' ' || 'world' AS new_string;
 SELECT CONCAT_WS(', ', first_name, last_name, date_of_birth) FROM actors;
