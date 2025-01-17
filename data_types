@@ -76,14 +76,21 @@ DATE / TIME TYPES
 date only
 4 bytes
 YYY-MM-DD
-2) TIME
+2) TIME, CURRENT_TIME
 time only
+8 bytes
+precision - number of fractional digitals placed in second field, up to 6 digits
+HH:MM          MM:SS.pppppp
+HH:MM:SS       HH:MM:SS.pppppp
+HHMMSS        HHMMSS.pppppp
 3) TIMESTAMP
 date and time
 4) TIMESTAMPTZ
 date, time, timezone
 5) INTERVAL
 stores values - difference between dates
+
+
 
 
 
