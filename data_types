@@ -85,6 +85,7 @@ HH:MM:SS       HH:MM:SS.pppppp
 HHMMSS        HHMMSS.pppppp
 3) TIMESTAMP
 date and time
+internal stored value UTC
 4) TIMESTAMPTZ
 date, time, timezone
 5) INTERVAL
