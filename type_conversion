@@ -1,0 +1,47 @@
+data converted from original data type to another data type 
+
+implicit: conversion done automatically
+explicit: conversion is done via 'conversion functions' CAST or ::
+
+CAST (expression AS target_data_type);
+expression: constant, table column, expression
+target_data_type: bollean, character, varchar, numeric, array, JSON, UUID, hstore, temporal type, special type
+
+SELECT
+CAST('0' AS BOOLEAN);
+
+SELECT
+CAST('14.7888' AS DOUBLE PRECISION);
+
+SELECT
+'10'::INTEGER,
+'2020-01-01'::DATE;
+
+implicit --> explicit conversion
+
+SELECT ROUND (CAST(10 AS NUMERIC),4) AS "result";
+
+SELECT SUBSTR('123456', 2) AS "result";
+
+SELECT
+SUBSTR('123456', 4) AS "implicit",
+SUBSTR(CAST('123456' AS TEXT),4) AS "explicit";
+
+CHANGE A B C D DATA TYPES INTO INTEGERS USING CAST
+
+
+INSERT INTO ratings (rating) 
+VALUES ('A'), ('B'), ('C'), ('D'); 
+
+INSERT INTO ratings (rating) 
+VALUES (1), (2), (3), (4); 
+
+SELECT 
+	rating_id,
+	CASE
+		WHEN rating~E'^\\d+$' THEN
+			CAST (rating AS INTEGER)
+		ELSE 0
+		END AS rating
+FROM 
+	ratings;
